@@ -7,11 +7,12 @@ import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core';
 
 import AccountProfile from './profile';
+import Changecredential from './credential';
 
 // Component styles
 const styles = theme => ({
     root: {
-      padding: theme.spacing.unit * 4
+      padding: theme.spacing.unit * 9
     }
   });
 
@@ -20,27 +21,12 @@ class AccountSheet extends Component {
         const {classes} = this.props;
         return (
             <div className={classes.root}>
-                <Grid
-                    container
-                    spacing={8}
-                >
-                    <Grid
-                    item
-                    lg={4}
-                    md={6}
-                    xl={4}
-                    xs={12}
-                    >
-                    <AccountProfile />
+                <Grid container spacing={8}>
+                    <Grid item lg={6} md={6} xl={8} xs={12}>
+                        <AccountProfile />
                     </Grid>
-                    <Grid
-                    item
-                    lg={8}
-                    md={6}
-                    xl={8}
-                    xs={12}
-                    >
-                    {/* <AccountDetails /> */}
+                    <Grid style ={{paddingLeft: '30px'}} item  md={5} xs={12}>
+                      <Changecredential />
                     </Grid>
                 </Grid>
             </div>

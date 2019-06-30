@@ -73,7 +73,7 @@ class index extends Component {
         const isMobile = ['xs', 'sm', 'md'].includes(width);
         return (
           <Fragment>
-            <AppBar position="static" style = {{  background: " #ffff"}} >
+            <AppBar position="fixed" style = {{  background: " #ffff"}} >
                <Toolbar align= "center"  >
                   {isMobile &&
                     <IconButton  onClick={this.handleToggleOpen}>
@@ -96,10 +96,9 @@ class index extends Component {
            <Drawer anchor="left"
                    onClose={this.handleClose}
                    classes={{ paper: classes.drawerPaper }} 
-                   onClose={this.handleClose}
                    variant={isMobile ? 'temporary' : 'permanent'}
                    open={isOpen}>
-                <Sidebar className={classes.sidebar}  onChangetitle={this.gettitle} />
+                <Sidebar  title = {this.state.title} onChangetitle={this.gettitle} />
             </Drawer>
             <main className={isMobile ? classes.mobcontent:classes.content} >
               <div>

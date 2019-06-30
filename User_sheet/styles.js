@@ -7,12 +7,9 @@ export default theme => ({
     signOutButton: {
         marginLeft: theme.spacing.unit,
       },
-    sidebar: {
-        width: '270px'
-    },
     content: {
       paddingTop: '50px',
-      paddingLeft: '150px'
+      paddingLeft: '150px',
       // paddingLeft: '150px'
       // transition: theme.transitions.create('margin', {
       //   easing: theme.transitions.easing.sharp,
@@ -29,7 +26,7 @@ export default theme => ({
       zIndex: 1200,
       width: '200px',
       marginTop: '66px',
-
+      backgroundColor: '#fff'
     },
     profile: {
       display: 'flex',

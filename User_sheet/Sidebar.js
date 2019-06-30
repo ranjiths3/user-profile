@@ -40,7 +40,6 @@ class Sidebar extends Component {
         };
         this.handleListItemClick= this.handleListItemClick.bind(this);
     }
-
     handleListItemClick = (index) => {
         switch (index) {
             case 1:
@@ -63,7 +62,8 @@ class Sidebar extends Component {
     }
 
     render() {
-        const {classes,width} = this.props;
+        const {classes} = this.props;
+        const titlename = this.props.title;
         return (
             <div>
                 <div className={classes.profile}>
@@ -88,7 +88,7 @@ class Sidebar extends Component {
                 <Divider className={classes.profileDivider} />
                 <List>
                     <ListItem
-                        className={ this.state.activeClasses[0] ? classes.listItem : classes.activeListItem} 
+                        className={ (titlename === 'Dashboard')  ? classes.activeListItem : classes.listItem} 
                         onClick={() => this.handleListItemClick(0)}
                     >
                         <ListItemIcon className={classes.listItemIcon}>
@@ -100,7 +100,7 @@ class Sidebar extends Component {
                         />
                     </ListItem>
                     <ListItem
-                        className={ this.state.activeClasses[1] ? classes.activeListItem : classes.listItem}
+                        className={ (titlename === 'Account') ? classes.activeListItem : classes.listItem}
                         onClick={() => this.handleListItemClick(1)}
                     >
                         <ListItemIcon className={classes.listItemIcon}>
